@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>302cde539d24750e0a4fd85d17d8cf01--wallpaper-pictures-pretty-pictures.jpg</file>
+        <file>../../Desktop/332643_naruto-desktop-wallpaper.jpg</file>
+        <file>uOFNos.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix1">
+        <file>302cde539d24750e0a4fd85d17d8cf01--wallpaper-pictures-pretty-pictures.jpg</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>uOFNos.jpg</file>
+    </qresource>
+    <qresource prefix="/fireworks">
+        <file>adobe-fireworks-icon-fireworks-effect-thumbnail.jpg</file>
+    </qresource>
+</RCC>
