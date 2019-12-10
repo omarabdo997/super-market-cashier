@@ -16,164 +16,17 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>260</y>
-      <width>251</width>
-      <height>91</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>36</x>
-      <y>260</y>
-      <width>71</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Address:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>180</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>180</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;name:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>135</y>
-      <width>221</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#c50062;&quot;&gt;SPECIAL CUSTOMER !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>171</x>
-      <y>381</y>
-      <width>42</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Yes</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>219</x>
-      <y>381</y>
-      <width>38</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>No</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>380</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Special Customer:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>140</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;New customer: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>180</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>260</y>
-      <width>251</width>
-      <height>91</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>430</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add Customer</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>110</x>
       <y>660</y>
       <width>151</width>
       <height>41</height>
@@ -186,237 +39,367 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>80</y>
-      <width>981</width>
-      <height>491</height>
+      <x>30</x>
+      <y>60</y>
+      <width>1281</width>
+      <height>521</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,0,7">
+    <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2,6">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>search:</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Customer phone:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_3">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#c50062;&quot;&gt;SPECIAL CUSTOMER !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;New customer: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;name:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_4"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Address:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="textEdit_2">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Special Customer:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Yes</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButton_2">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>No</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QTreeWidget" name="treeWidget">
-         <property name="autoFillBackground">
-          <bool>true</bool>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Add Customer</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(158, 151, 255);
-QHeaderView::section {
-background-color: rgb(28, 28, 28);
-color: rgb(215, 215, 215);
-}</string>
-         </property>
-         <property name="indentation">
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="6,1,8">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>search:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTreeWidget" name="treeWidget">
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(158, 151, 255);
+</string>
+           </property>
+           <property name="indentation">
+            <number>0</number>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <attribute name="headerDefaultSectionSize">
+            <number>85</number>
+           </attribute>
+           <attribute name="headerShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="textAlignment">
+             <set>AlignLeading|AlignVCenter</set>
+            </property>
+            <property name="background">
+             <color>
+              <red>91</red>
+              <green>6</green>
+              <blue>115</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Price</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>91</red>
+              <green>6</green>
+              <blue>115</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+         <property name="spacing">
           <number>0</number>
          </property>
-         <property name="sortingEnabled">
-          <bool>false</bool>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
          </property>
-         <attribute name="headerDefaultSectionSize">
-          <number>85</number>
-         </attribute>
-         <attribute name="headerShowSortIndicator" stdset="0">
-          <bool>false</bool>
-         </attribute>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="textAlignment">
-           <set>AlignLeading|AlignVCenter</set>
-          </property>
-          <property name="background">
-           <color>
-            <red>91</red>
-            <green>6</green>
-            <blue>115</blue>
-           </color>
-          </property>
-          <property name="foreground">
-           <brush brushstyle="SolidPattern">
-            <color alpha="255">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
-            </color>
-           </brush>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Price</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="background">
-           <color>
-            <red>91</red>
-            <green>6</green>
-            <blue>115</blue>
-           </color>
-          </property>
-          <property name="foreground">
-           <brush brushstyle="SolidPattern">
-            <color alpha="255">
-             <red>0</red>
-             <green>0</green>
-             <blue>0</blue>
-            </color>
-           </brush>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="sizeConstraint">
-        <enum>QLayout::SetDefaultConstraint</enum>
-       </property>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>108</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>108</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>&gt;&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>&lt;&lt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>&gt;&gt;</string>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>2</number>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>&lt;&lt;</string>
+         <property name="topMargin">
+          <number>30</number>
          </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <property name="spacing">
-        <number>2</number>
-       </property>
-       <property name="topMargin">
-        <number>30</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QTreeWidget" name="treeWidget_2">
-         <property name="indentation">
+         <property name="bottomMargin">
           <number>0</number>
          </property>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-          <property name="background">
-           <color>
-            <red>42</red>
-            <green>45</green>
-            <blue>115</blue>
-           </color>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Quantity</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Price</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>Finish</string>
-         </property>
-        </widget>
+         <item>
+          <widget class="QTreeWidget" name="treeWidget_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(158, 151, 255);</string>
+           </property>
+           <property name="indentation">
+            <number>0</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>42</red>
+              <green>45</green>
+              <blue>115</blue>
+             </color>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Quantity</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Price</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Finish</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>90</y>
-      <width>361</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0">
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Customer phone:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit_3">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </widget>
@@ -431,19 +414,16 @@ color: rgb(215, 215, 215);
    <zorder>label_6</zorder>
    <zorder>lineEdit_3</zorder>
    <zorder>pushButton_4</zorder>
-   <zorder>textBrowser</zorder>
    <zorder>label_7</zorder>
-   <zorder>textBrowser_2</zorder>
    <zorder>label_8</zorder>
    <zorder>label_9</zorder>
    <zorder>label_10</zorder>
    <zorder>label_11</zorder>
-   <zorder>textEdit</zorder>
    <zorder>textEdit_2</zorder>
    <zorder>pushButton_5</zorder>
    <zorder>pushButton_6</zorder>
-   <zorder>radioButton</zorder>
    <zorder>treeWidget</zorder>
+   <zorder>lineEdit_4</zorder>
   </widget>
  </widget>
  <tabstops>

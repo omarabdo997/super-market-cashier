@@ -42,16 +42,15 @@ MainWindow::MainWindow(QWidget *parent)
         }
         ui->label_9->hide();
         ui->label_11->hide();
-        ui->textEdit->hide();
-        ui->textEdit_2->hide();
+        ui->lineEdit_4->setReadOnly(true);
+        ui->textEdit_2->setReadOnly(true);
         ui->radioButton->hide();
         ui->radioButton_2->hide();
         ui->label_10->hide();
         ui->pushButton_5->hide();
         ui->radioButton->setEnabled(false);
         ui->radioButton_2->setEnabled(false);
-        //ui->radioButton->setAutoExclusive(false);
-        //ui->radioButton_2->setAutoExclusive(false);
+
         menu=controller.retrieve_menu();
         if(user->isAdmin())
         {
@@ -197,18 +196,18 @@ void MainWindow::on_pushButton_3_clicked()
         controller.make_selling(cart,customer);
         QMessageBox::information(this,"message",cart.make_selling());
         ui->treeWidget_2->clear();
-        ui->textBrowser->clear();
-        ui->textBrowser_2->clear();
+        ui->textEdit_2->clear();
+        ui->lineEdit_4->clear();
         ui->lineEdit_3->clear();
         ui->label_9->hide();
         ui->label_11->hide();
-        ui->textEdit->hide();
-        ui->textEdit_2->hide();
+        ui->lineEdit_4->setReadOnly(true);
+        ui->textEdit_2->setReadOnly(true);
         ui->radioButton->hide();
         ui->radioButton_2->hide();
         ui->label_10->hide();
         ui->pushButton_5->hide();
-        ui->textEdit->clear();
+        ui->lineEdit_4->clear();
         ui->textEdit_2->clear();
         ui->radioButton->setEnabled(false);
         ui->radioButton_2->setEnabled(false);
@@ -224,8 +223,24 @@ void MainWindow::on_pushButton_4_clicked()
 {
     if(controller.retrieve_customer(customer,ui->lineEdit_3->text()))
     {
-        ui->textBrowser->setText(customer.get_address());
-        ui->textBrowser_2->setText(customer.get_name());
+        ui->textEdit_2->setText(customer.get_address());
+        ui->lineEdit_4->setText(customer.get_name());
+        ui->label_9->hide();
+        ui->label_11->hide();
+        ui->lineEdit_4->setReadOnly(true);
+        ui->textEdit_2->setReadOnly(true);
+        ui->radioButton->hide();
+        ui->radioButton_2->hide();
+        ui->label_10->hide();
+        ui->pushButton_5->hide();
+        ui->radioButton->setAutoExclusive(false);
+        ui->radioButton_2->setAutoExclusive(false);
+        ui->radioButton->setEnabled(false);
+        ui->radioButton_2->setEnabled(false);
+        ui->radioButton->setChecked(false);
+        ui->radioButton_2->setChecked(false);
+        ui->radioButton->setAutoExclusive(true);
+        ui->radioButton_2->setAutoExclusive(true);
         if(customer.isSpecial())
         {
             ui->label_9->show();
@@ -237,9 +252,12 @@ void MainWindow::on_pushButton_4_clicked()
         reply=QMessageBox::question(this,"Create new customer?","No user found with this phone number create new user with this phone number?");
         if(reply==QMessageBox::Yes)
         {
+            ui->label_9->hide();
             ui->label_11->show();
-            ui->textEdit->show();
-            ui->textEdit_2->show();
+            ui->lineEdit_4->setReadOnly(false);
+            ui->textEdit_2->setReadOnly(false);
+            ui->lineEdit_4->clear();
+            ui->textEdit_2->clear();
             ui->radioButton->show();
             ui->radioButton_2->show();
             ui->label_10->show();
@@ -274,24 +292,22 @@ void MainWindow::on_pushButton_5_clicked()
         {
             is_special=0;
         }
-        if(ui->textEdit->toPlainText()=="")
+        if(ui->lineEdit_4->text()=="")
         {
             QMessageBox::critical(this,"No name","Please fill the name field!");
         }
         else
         {
-            customer=controller.add_customer(ui->textEdit->toPlainText(),ui->lineEdit_3->text(),ui->textEdit_2->toPlainText(),is_special);
+            customer=controller.add_customer(ui->lineEdit_4->text(),ui->lineEdit_3->text(),ui->textEdit_2->toPlainText(),is_special);
             controller.retrieve_customer(customer,ui->lineEdit_3->text());
             ui->label_9->hide();
             ui->label_11->hide();
-            ui->textEdit->hide();
-            ui->textEdit_2->hide();
+            ui->lineEdit_4->setReadOnly(true);
+            ui->textEdit_2->setReadOnly(true);
             ui->radioButton->hide();
             ui->radioButton_2->hide();
             ui->label_10->hide();
             ui->pushButton_5->hide();
-            ui->textEdit->clear();
-            ui->textEdit_2->clear();
             ui->radioButton->setAutoExclusive(false);
             ui->radioButton_2->setAutoExclusive(false);
             ui->radioButton->setEnabled(false);
@@ -301,8 +317,8 @@ void MainWindow::on_pushButton_5_clicked()
             ui->radioButton->setAutoExclusive(true);
             ui->radioButton_2->setAutoExclusive(true);
 
-            ui->textBrowser_2->setText(customer.get_name());
-            ui->textBrowser->setText(customer.get_address());
+
+
         }
 
     }
