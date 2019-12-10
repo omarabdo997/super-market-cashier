@@ -9,7 +9,22 @@ StoreMenu::StoreMenu(QWidget *parent) :
     ui(new Ui::StoreMenu)
 {
     ui->setupUi(this);
-    ui->listWidget->addItems(store.display());
+    ui->treeWidget->setColumnWidth(0,280);
+    ui->treeWidget->setColumnWidth(1,75);
+    ui->treeWidget->setColumnWidth(2,75);
+    ui->treeWidget->setColumnWidth(3,75);
+    QTreeWidgetItem* store_items;
+
+    for(int i=0;i<menu.get_size();i++)
+    {
+        store_items=new QTreeWidgetItem();
+        store_items->setText(0,store.get_item(i).get_name());
+        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
+        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
+        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        ui->treeWidget->insertTopLevelItem(i,store_items);
+    }
+
     ui->label_4->setText(controller.retrieve_profit());
     ui->label_6->setText(controller.retrieve_capital());
 
@@ -25,8 +40,17 @@ void StoreMenu::on_pushButton_clicked()
     selector=0;
     AddModItem addmod;
     addmod.exec();
-    ui->listWidget->clear();
-    ui->listWidget->addItems(store.display());
+    QTreeWidgetItem* store_items;
+    ui->treeWidget->clear();
+    for(int i=0;i<menu.get_size();i++)
+    {
+        store_items=new QTreeWidgetItem();
+        store_items->setText(0,store.get_item(i).get_name());
+        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
+        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
+        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        ui->treeWidget->insertTopLevelItem(i,store_items);
+    }
 
 
 }
@@ -34,33 +58,68 @@ void StoreMenu::on_pushButton_clicked()
 void StoreMenu::on_pushButton_2_clicked()
 {
     selector=1;
-    row=ui->listWidget->currentRow();
+    row=ui->treeWidget->currentIndex().row();
     AddModItem addmod;
     addmod.exec();
-    ui->listWidget->clear();
-    ui->listWidget->addItems(store.display());
+    QTreeWidgetItem* store_items;
+    ui->treeWidget->clear();
+    for(int i=0;i<menu.get_size();i++)
+    {
+        store_items=new QTreeWidgetItem();
+        store_items->setText(0,store.get_item(i).get_name());
+        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
+        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
+        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        ui->treeWidget->insertTopLevelItem(i,store_items);
+    }
 }
 
 void StoreMenu::on_pushButton_3_clicked()
 {
-    row=ui->listWidget->currentRow();
+    row=ui->treeWidget->currentIndex().row();
     controller.delete_in_store(store,row);
-    ui->listWidget->clear();
-    ui->listWidget->addItems(store.display());
+    QTreeWidgetItem* store_items;
+    ui->treeWidget->clear();
+    for(int i=0;i<menu.get_size();i++)
+    {
+        store_items=new QTreeWidgetItem();
+        store_items->setText(0,store.get_item(i).get_name());
+        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
+        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
+        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        ui->treeWidget->insertTopLevelItem(i,store_items);
+    }
 }
 
 void StoreMenu::on_pushButton_4_clicked()
 {
-    QMessageBox::information(this,"Recipt",store.display_sellings(ui->listWidget_2->currentRow()));
+    QMessageBox::information(this,"Recipt",store.display_sellings(ui->treeWidget_2->currentIndex().row()));
 }
 
-void StoreMenu::on_listWidget_2_itemDoubleClicked(QListWidgetItem *item)
-{
-    QMessageBox::information(this,"Recipt",store.display_sellings(ui->listWidget_2->currentRow()));
-}
+
 
 void StoreMenu::on_pushButton_5_clicked()
 {
-    ui->listWidget_2->clear();
-    ui->listWidget_2->addItems(controller.retrieve_sellings_history(store,ui->lineEdit->text(),ui->lineEdit_2->text()));
+    QStringList lst[5000];
+    int size=controller.retrieve_sellings_history(store,ui->lineEdit->text(),ui->lineEdit_2->text(),lst);
+    QTreeWidgetItem* history;
+    qDebug()<<"here";
+    ui->treeWidget_2->clear();
+    for(int i=0;i<size;i++)
+    {
+        history=new QTreeWidgetItem();
+        history->setText(0,lst[i][0]);
+        history->setText(1,lst[i][2]);
+        history->setText(2,lst[i][3]);
+        history->setText(3,lst[i][4]);
+        ui->treeWidget_2->insertTopLevelItem(i,history);
+    }
+
+
+
+}
+
+void StoreMenu::on_treeWidget_2_itemDoubleClicked(QTreeWidgetItem *item, int column)
+{
+    QMessageBox::information(this,"Recipt",store.display_sellings(ui->treeWidget_2->currentIndex().row()));
 }

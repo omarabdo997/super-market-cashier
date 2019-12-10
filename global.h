@@ -9,6 +9,7 @@
 #include <iostream>
 #include "customer.h"
 #include "store.h"
+#include <QTreeWidgetItem>
 
 extern User *user;
 extern Controller controller;
@@ -18,6 +19,9 @@ extern Customer customer;
 extern Store store;
 extern int row;
 extern int selector;
+extern QTreeWidgetItem* item[10000];
+//extern QTreeWidgetItem* store_items[10000];
+extern QTreeWidgetItem* cart_items[100];
 
 
 

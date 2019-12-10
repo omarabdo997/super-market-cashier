@@ -175,18 +175,19 @@ bool Controller::retrieve_customer(Customer &customer,QString phone)
 
 
 }
-QStringList Controller::retrieve_sellings_history(Store& store,QString from_date,QString to_date)
+int Controller::retrieve_sellings_history(Store& store,QString from_date,QString to_date,QStringList lst[])
 {
-    QStringList lst;
-    qDebug()<<from_date;
+
+
+
     QDate date1;
     QDate date2;
     date1=date1.fromString(from_date,"d-M-yyyy");
-    qDebug()<<date1.toString("yyyy-MM-dd");
+
     date2=date2.fromString(to_date,"d-M-yyyy");
     date2=date2.addDays(1);
     sql="select * from sellings where date_time between '"+date1.toString("yyyy-MM-dd")+"' and '"+date2.toString("yyyy-MM-dd")+"'";
-    qDebug()<<sql;
+
     arry=sql.toLocal8Bit();
 
     q=arry.data();
@@ -204,14 +205,21 @@ QStringList Controller::retrieve_sellings_history(Store& store,QString from_date
         date_time=row[3];
         price=row[4];
         profit=row[5];
+        lst[i].append(phone);
+        lst[i].append(sellings);
+        lst[i].append(date_time);
+        lst[i].append(price);
+        lst[i].append(profit);
         total=phone+"\t"+date_time+"\t"+price+"\t"+profit;
-        lst.append(total);
+
+
         store.set_sellings(sellings,i);
 
         i++;
 
     }
-    return lst;
+    return i;
+
 
 }
 Customer Controller::add_customer(QString name,QString phone,QString address,int is_special)

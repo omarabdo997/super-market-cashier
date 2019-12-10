@@ -12,7 +12,15 @@ QString Item::displayWithPrice()
 {
     QString name_formate=name;
     name_formate.truncate(13);
-    return name_formate+"\t\t"+QVariant(selling_price).toString();
+    if(name.size()<=13)
+    {
+        return name+"\t\t"+QVariant(selling_price).toString();
+    }
+    else
+    {
+        return name+"\t"+QVariant(selling_price).toString();
+    }
+
 }
 QString Item::displayWithQuantity()
 {

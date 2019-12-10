@@ -13,196 +13,187 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="listWidget">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>70</y>
-     <width>351</width>
-     <height>381</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>470</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add item</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>470</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Edit item</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>470</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Delete item</string>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="listWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>750</x>
-     <y>70</y>
-     <width>411</width>
-     <height>391</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>750</x>
-     <y>470</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View recipt</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>40</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>40</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>750</x>
-     <y>40</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>from:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>910</x>
-     <y>40</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>to:</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>1080</x>
-     <y>40</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Search</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
-     <width>111</width>
-     <height>31</height>
+     <y>40</y>
+     <width>1251</width>
+     <height>531</height>
     </rect>
    </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#0000ff;&quot;&gt;Total Profit :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>65</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;MS Sans Serif&quot;;
+   <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,4,3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#0000ff;&quot;&gt;Total Profit :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;MS Sans Serif&quot;;
 color: rgb(0, 0, 127);</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>45</x>
-     <y>90</y>
-     <width>101</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff0000;&quot;&gt;Capital :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>93</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;MS Sans Serif&quot;;
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff0000;&quot;&gt;Capital :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;MS Sans Serif&quot;;
 color: rgb(85, 0, 0);</string>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0">
+      <item row="0" column="0" colspan="3">
+       <widget class="QTreeWidget" name="treeWidget">
+        <property name="indentation">
+         <number>0</number>
+        </property>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Selling Price</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Buying Price</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Quantity</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Add item</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Edit item</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Delete item</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>from:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>to:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_2"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="text">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget_2">
+          <column>
+           <property name="text">
+            <string>Phone</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Date and Time</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Profit</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>View recipt</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

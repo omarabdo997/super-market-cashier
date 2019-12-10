@@ -12,6 +12,7 @@
 
 class Cart
 {
+private:
     Item items[100];
     QMap<QString,int>cart_menu;
     int size;

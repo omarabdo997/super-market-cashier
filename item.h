@@ -2,6 +2,10 @@
 #define ITEM_H
 #include <QString>
 #include <QVariant>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <iomanip>
 
 class Item
 {

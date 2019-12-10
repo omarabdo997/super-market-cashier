@@ -14,6 +14,8 @@
 #include "customer.h"
 #include "store.h"
 #include "global.h"
+#include "QWidgetItem"
+#include <QList>
 
 //User *user;
 //Controller controller;
@@ -55,6 +57,27 @@ MainWindow::MainWindow(QWidget *parent)
         {
             store=Store(menu.get_items(),menu.get_size_address());
         }
+        ui->treeWidget->setColumnWidth(0,280);
+        ui->treeWidget->setColumnWidth(1,75);
+        ui->treeWidget_2->setColumnWidth(0,280);
+//91.6.115
+
+
+
+
+
+        for(int i=0;i<menu.get_size();i++)
+        {
+
+            item[i]=new QTreeWidgetItem();
+            item[i]->setText(0,menu.get_item(i).get_name());
+            item[i]->setText(1,QVariant(menu.get_item(i).get_selling_price()).toString());
+            ui->treeWidget->insertTopLevelItem(i,item[i]);
+
+
+
+        }
+//        ui->treeWidget->setStyleSheet("QHeaderView::section {background-color:red}");
 
 
 
@@ -65,7 +88,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    ui->listWidget->addItems(menu.display());
+
+
 
 
 
@@ -89,32 +113,44 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     int quantity=ui->lineEdit_2->text().toInt();
-    int row=ui->listWidget->currentRow();
+    int row=ui->treeWidget->currentIndex().row();
     TimeStamp now;
     qDebug()<<now.get_formate();
 
     if(row!=-1)
     {
         cart.add_item(menu,quantity,row);
-        ui->listWidget_2->clear();
         ui->lineEdit_2->clear();
         qDebug()<<"New"<<menu.get_item(row).get_quantity();
-        ui->listWidget_2->addItems(cart.display());
+        ui->treeWidget_2->clear();
+        for(int i=0;i<cart.get_size();i++)
+        {
+            cart_items[i]=new QTreeWidgetItem();
+            cart_items[i]->setText(0,cart.get_item(i).get_name());
+            cart_items[i]->setText(1,QVariant(cart.get_item(i).get_quantity()).toString());
+            cart_items[i]->setText(2,QVariant(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()).toString());
+            ui->treeWidget_2->insertTopLevelItem(i,cart_items[i]);
+
+
+
+        }
     }
+
 
 }
 
+
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
-    for(int i=0;i<ui->listWidget->count();i++)
+    for(int i=0;i<menu.get_size();i++)
     {
-        if(ui->listWidget->item(i)->text().contains(arg1))
+        if(item[i]->text(0).contains(arg1))
         {
-            ui->listWidget->item(i)->setHidden(false);
+            item[i]->setHidden(false);
         }
         else
         {
-            ui->listWidget->item(i)->setHidden(true);
+            item[i]->setHidden(true);
         }
     }
 
@@ -124,15 +160,28 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    int row=ui->listWidget_2->currentRow();
+    int row=ui->treeWidget_2->currentIndex().row();
     qDebug()<<"row"<<row;
     int quantity=ui->lineEdit_2->text().toInt();
     if(row!=-1)
     {
         cart.remove_item(menu,quantity,row);
-        ui->listWidget_2->clear();
-        ui->listWidget_2->addItems(cart.display());
         ui->lineEdit_2->clear();
+        ui->treeWidget_2->clear();
+        qDebug()<<"iam here";
+        for(int i=0;i<cart.get_size();i++)
+        {
+            cart_items[i]=new QTreeWidgetItem();
+
+            cart_items[i]->setText(0,cart.get_item(i).get_name());
+            cart_items[i]->setText(1,QVariant(cart.get_item(i).get_quantity()).toString());
+            cart_items[i]->setText(2,QVariant(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()).toString());
+            ui->treeWidget_2->insertTopLevelItem(i,cart_items[i]);
+
+
+
+        }
+
     }
 
 }
@@ -147,7 +196,7 @@ void MainWindow::on_pushButton_3_clicked()
     {
         controller.make_selling(cart,customer);
         QMessageBox::information(this,"message",cart.make_selling());
-        ui->listWidget_2->clear();
+        ui->treeWidget_2->clear();
         ui->textBrowser->clear();
         ui->textBrowser_2->clear();
         ui->lineEdit_3->clear();
@@ -265,6 +314,17 @@ void MainWindow::on_pushButton_6_clicked()
 {
     StoreMenu storeMenu;
     storeMenu.exec();
-    ui->listWidget->clear();
-    ui->listWidget->addItems(menu.display());
+    ui->treeWidget->clear();
+    for(int i=0;i<menu.get_size();i++)
+    {
+
+        item[i]=new QTreeWidgetItem();
+        item[i]->setText(0,menu.get_item(i).get_name());
+        item[i]->setText(1,QVariant(menu.get_item(i).get_selling_price()).toString());
+        ui->treeWidget->insertTopLevelItem(i,item[i]);
+
+
+
+    }
+
 }

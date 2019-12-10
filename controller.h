@@ -29,7 +29,7 @@ public:
     void add_to_store(Store &store,QString name,QString selling_price,QString buying_price,QString quantity);
     void update_in_store(Store &store,int row,QString name,QString selling_price,QString buying_price,QString quantity);
     void delete_in_store(Store &store,int row);
-    QStringList retrieve_sellings_history(Store& store,QString from_date,QString to_date);
+    int retrieve_sellings_history(Store& store,QString from_date,QString to_date,QStringList lst[]);
     QString retrieve_profit();
     QString retrieve_capital();
 };
