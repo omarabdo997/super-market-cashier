@@ -40,6 +40,14 @@ MainWindow::MainWindow(QWidget *parent)
         {
             this->~MainWindow();
         }
+        if(user->isAdmin())
+        {
+            ui->pushButton_6->setEnabled(true);
+        }
+        else
+        {
+            ui->pushButton_6->setEnabled(false);
+        }
         QPixmap bkgnd(":/new/prefix4/images.jpg");
             QSize size;
             size.setWidth(1920);
@@ -48,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
             QPalette palette;
             palette.setBrush(QPalette::Background, bkgnd);
             this->setPalette(palette);
+//        this->centralWidget()->setStyleSheet("background-image:url(:/new/prefix4/images.jpg); background-position: center; ");
         ui->label_9->hide();
         ui->label_11->hide();
         ui->lineEdit_4->setReadOnly(true);
