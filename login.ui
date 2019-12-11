@@ -17,7 +17,7 @@
    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Log in&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/Desktop/332643_naruto-desktop-wallpaper.jpg);
+   <string notr="true">background-image: url(:/new/prefix3/332643_naruto-desktop-wallpaper.jpg);
 background-position:center top;</string>
   </property>
   <widget class="QPushButton" name="pushButton">

@@ -40,6 +40,14 @@ MainWindow::MainWindow(QWidget *parent)
         {
             this->~MainWindow();
         }
+        QPixmap bkgnd(":/new/prefix4/images.jpg");
+            QSize size;
+            size.setWidth(1920);
+            size.setHeight(1080);
+            bkgnd = bkgnd.scaled(size, Qt::IgnoreAspectRatio);
+            QPalette palette;
+            palette.setBrush(QPalette::Background, bkgnd);
+            this->setPalette(palette);
         ui->label_9->hide();
         ui->label_11->hide();
         ui->lineEdit_4->setReadOnly(true);
