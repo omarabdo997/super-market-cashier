@@ -1,4 +1,4 @@
-CREATE DATABASE Resturant;
+CREATE DATABASE supermarket;
 USE Resturant;
 CREATE TABLE customers(
   id int(11) NOT NULL AUTO_INCREMENT,
