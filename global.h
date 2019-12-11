@@ -22,6 +22,9 @@ extern int selector;
 extern QTreeWidgetItem* item[10000];
 //extern QTreeWidgetItem* store_items[10000];
 extern QTreeWidgetItem* cart_items[100];
+extern float paid;
+extern float delivery_fee;
+extern bool delivery;
 
 
 

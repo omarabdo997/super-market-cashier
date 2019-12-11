@@ -19,6 +19,7 @@ SOURCES += \
     addmoditem.cpp \
     bill.cpp \
     cart.cpp \
+    confirmationmenu.cpp \
     controller.cpp \
     customer.cpp \
     dialog.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     addmoditem.h \
     bill.h \
     cart.h \
+    confirmationmenu.h \
     controller.h \
     customer.h \
     dialog.h \
@@ -58,6 +60,7 @@ HEADERS += \
 
 FORMS += \
     addmoditem.ui \
+    confirmationmenu.ui \
     dialog.ui \
     login.ui \
     mainwindow.ui \

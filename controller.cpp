@@ -2,6 +2,7 @@
 #include "qdebug.h"
 #include "string"
 #include "item.h"
+#include "global.h"
 
 using namespace std;
 
@@ -134,11 +135,11 @@ void Controller::make_selling(Cart cart,Customer customer)
 {
     if(customer.get_phone()=="")
     {
-        sql="insert into sellings(sellings,price,profit) values('"+cart.make_selling()+"',"+QVariant(cart.get_total_price()).toString()+","+QVariant(cart.get_profit()).toString()+")";
+        sql="insert into sellings(sellings,price,profit) values('"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee)+"',"+QVariant(cart.get_total_price()+delivery_fee).toString()+","+QVariant(cart.get_profit()).toString()+")";
     }
     else
     {
-        sql="insert into sellings(phone,sellings,price,profit) values('"+customer.get_phone()+"','"+cart.make_selling()+"',"+QVariant(cart.get_total_price()).toString()+","+QVariant(cart.get_profit()).toString()+")";
+        sql="insert into sellings(phone,sellings,price,profit) values('"+customer.get_phone()+"','"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee)+"',"+QVariant(cart.get_total_price()+delivery_fee).toString()+","+QVariant(cart.get_profit()).toString()+")";
     }
 
     arry=sql.toLocal8Bit();

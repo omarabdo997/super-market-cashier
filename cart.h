@@ -24,7 +24,7 @@ public:
     void set_size(int s);
     QStringList display();
     void remove_item(Menu& menu,float quantity,int row);
-    QString make_selling();
+    QString make_selling(QString name,float paid,bool delivery,float delivery_fee);
     float get_total_price();
     float get_profit();
     int get_size();

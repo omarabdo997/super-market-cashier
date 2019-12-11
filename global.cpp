@@ -12,4 +12,7 @@ int row;
 int selector;
 QTreeWidgetItem* item[10000];
 QTreeWidgetItem* cart_items[100];
+float paid;
+float delivery_fee=0;
+bool delivery=0;
 //QTreeWidgetItem* store_items[10000];

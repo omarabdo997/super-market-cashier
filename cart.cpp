@@ -76,10 +76,10 @@ void Cart::remove_item(Menu& menu,float quantity,int row)
     }
     qDebug()<<menu.get_item(id).get_quantity();
 }
-QString Cart::make_selling()
+QString Cart::make_selling(QString name,float paid,bool delivery,float delivery_fee)
 {
 
-    return bill.make_bill(items,size)+QVariant(get_total_price()).toString();
+    return bill.make_bill(items,size,name,get_total_price(),paid,delivery,delivery_fee);
 }
 float Cart::get_total_price()
 {

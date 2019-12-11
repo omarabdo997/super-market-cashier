@@ -16,6 +16,7 @@
 #include "global.h"
 #include "QWidgetItem"
 #include <QList>
+#include "confirmationmenu.h"
 
 //User *user;
 //Controller controller;
@@ -204,14 +205,17 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    if(cart.get_item(0).get_quantity()==0)
+    if(cart.get_size()==0)
     {
         QMessageBox::warning(this,"No items","Select items first!");
     }
     else
     {
+        ConfirmationMenu confirmation_menu;
+        confirmation_menu.exec();
+
         controller.make_selling(cart,customer);
-        QMessageBox::information(this,"message",cart.make_selling());
+        QMessageBox::information(this,"message",cart.make_selling(user->get_name(),paid,delivery,delivery_fee));
         ui->treeWidget_2->clear();
         ui->textEdit_2->clear();
         ui->lineEdit_4->clear();
@@ -231,6 +235,7 @@ void MainWindow::on_pushButton_3_clicked()
         customer=Customer();
 
         cart=Cart();
+        cart.set_size(0);
     }
 
 
