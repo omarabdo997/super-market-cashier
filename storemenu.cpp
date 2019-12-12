@@ -3,6 +3,7 @@
 #include "global.h"
 #include "addmoditem.h"
 #include <QMessageBox>
+#include <QUuid>
 
 StoreMenu::StoreMenu(QWidget *parent) :
     QDialog(parent),
@@ -130,4 +131,14 @@ void StoreMenu::on_pushButton_5_clicked()
 void StoreMenu::on_treeWidget_2_itemDoubleClicked(QTreeWidgetItem *item, int column)
 {
     QMessageBox::information(this,"Recipt",store.display_sellings(ui->treeWidget_2->currentIndex().row()));
+}
+
+
+void StoreMenu::on_pushButton_6_clicked()
+{
+    QString promocode=QUuid::createUuid().toString();
+    promocode.remove(QRegularExpression("{|}|-"));
+    promocode.resize(12);
+    controller.add_promocode(promocode,ui->lineEdit_3->text().toFloat()/100);
+    QMessageBox::information(this,"code","Promocode is "+promocode+" with discount of "+ui->lineEdit_3->text()+"%");
 }

@@ -33,6 +33,8 @@ public:
     QString retrieve_profit();
     QString retrieve_capital();
     float check_promocode(QString code);
+    void remove_promocode(QString code);
+    void add_promocode(QString code,float discount);
 };
 
 #endif // CONTROLLER_H

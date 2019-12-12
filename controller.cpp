@@ -279,3 +279,19 @@ float Controller::check_promocode(QString code)
         return 0;
     }
 }
+void Controller::remove_promocode(QString code)
+{
+    sql="Delete from promocodes where code='"+code+"'";
+    arry=sql.toLocal8Bit();
+
+    q=arry.data();
+    result=mysql_query(conn,q);
+}
+void Controller::add_promocode(QString code,float discount)
+{
+    sql="insert into promocodes(code,discount) values('"+code+"',"+QString::number(discount)+")";
+    arry=sql.toLocal8Bit();
+
+    q=arry.data();
+    result=mysql_query(conn,q);
+}

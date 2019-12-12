@@ -31,6 +31,8 @@ private slots:
 
     void on_treeWidget_2_itemDoubleClicked(QTreeWidgetItem *item, int column);
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::StoreMenu *ui;
 };

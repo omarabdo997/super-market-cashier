@@ -1,7 +1,7 @@
 #include "confirmationmenu.h"
 #include "ui_confirmationmenu.h"
 #include "global.h"
-
+QString promocode;
 ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConfirmationMenu)
@@ -10,6 +10,7 @@ ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
     ui->label_3->setText(QString::number(cart.get_total_price()));
     ui->label_7->hide();
     ui->label_8->hide();
+    confirme=0;
     QPixmap bkgnd(":/new/prefix4/images.jpg");
         QSize size;
         size.setWidth(1920);
@@ -61,6 +62,8 @@ void ConfirmationMenu::on_pushButton_clicked()
         delivery=0;
         delivery_fee=0;
     }
+    controller.remove_promocode(promocode);
+    confirme=1;
     close();
 }
 
@@ -78,7 +81,7 @@ void ConfirmationMenu::on_pushButton_3_clicked()
 {
     promocode_discount=controller.check_promocode(ui->lineEdit_2->text());
 
-
+    promocode=ui->lineEdit_2->text();
     int discount_percentage=promocode_discount*100;
     if(promocode_discount!=0)
     {
@@ -112,4 +115,9 @@ void ConfirmationMenu::on_radioButton_clicked(bool checked)
         ui->lineEdit_3->setReadOnly(false);
 
     }
+}
+
+void ConfirmationMenu::on_pushButton_2_clicked()
+{
+    close();
 }

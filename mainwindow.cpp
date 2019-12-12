@@ -18,6 +18,7 @@
 #include <QList>
 #include "confirmationmenu.h"
 
+
 //User *user;
 //Controller controller;
 //Menu menu;
@@ -57,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
             QPalette palette;
             palette.setBrush(QPalette::Background, bkgnd);
             this->setPalette(palette);
+
 //        this->centralWidget()->setStyleSheet("background-image:url(:/new/prefix4/images.jpg); background-position: center; ");
         ui->label_9->hide();
         ui->label_11->hide();
@@ -213,30 +215,33 @@ void MainWindow::on_pushButton_3_clicked()
     {
         ConfirmationMenu confirmation_menu;
         confirmation_menu.exec();
+        if(confirme==1)
+        {
+            controller.make_selling(cart,customer);
+            QMessageBox::information(this,"message",cart.make_selling(user->get_name(),paid,delivery,delivery_fee,promocode_discount));
+            promocode_discount=0;
+            ui->treeWidget_2->clear();
+            ui->textEdit_2->clear();
+            ui->lineEdit_4->clear();
+            ui->lineEdit_3->clear();
+            ui->label_9->hide();
+            ui->label_11->hide();
+            ui->lineEdit_4->setReadOnly(true);
+            ui->textEdit_2->setReadOnly(true);
+            ui->radioButton->hide();
+            ui->radioButton_2->hide();
+            ui->label_10->hide();
+            ui->pushButton_5->hide();
+            ui->lineEdit_4->clear();
+            ui->textEdit_2->clear();
+            ui->radioButton->setEnabled(false);
+            ui->radioButton_2->setEnabled(false);
+            customer=Customer();
 
-        controller.make_selling(cart,customer);
-        QMessageBox::information(this,"message",cart.make_selling(user->get_name(),paid,delivery,delivery_fee,promocode_discount));
-        promocode_discount=0;
-        ui->treeWidget_2->clear();
-        ui->textEdit_2->clear();
-        ui->lineEdit_4->clear();
-        ui->lineEdit_3->clear();
-        ui->label_9->hide();
-        ui->label_11->hide();
-        ui->lineEdit_4->setReadOnly(true);
-        ui->textEdit_2->setReadOnly(true);
-        ui->radioButton->hide();
-        ui->radioButton_2->hide();
-        ui->label_10->hide();
-        ui->pushButton_5->hide();
-        ui->lineEdit_4->clear();
-        ui->textEdit_2->clear();
-        ui->radioButton->setEnabled(false);
-        ui->radioButton_2->setEnabled(false);
-        customer=Customer();
+            cart=Cart();
+            cart.set_size(0);
+        }
 
-        cart=Cart();
-        cart.set_size(0);
     }
 
 

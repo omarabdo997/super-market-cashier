@@ -26,6 +26,7 @@ extern float paid;
 extern float delivery_fee;
 extern bool delivery;
 extern float promocode_discount;
+extern bool confirme;
 
 
 
