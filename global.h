@@ -25,6 +25,7 @@ extern QTreeWidgetItem* cart_items[100];
 extern float paid;
 extern float delivery_fee;
 extern bool delivery;
+extern float promocode_discount;
 
 
 

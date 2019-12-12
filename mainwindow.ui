@@ -247,7 +247,11 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="styleSheet">
+               <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -357,6 +361,9 @@ background-image: url(:/new/prefix2/grey-background-v1.jpg);
               <width>108</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
             </property>
            </widget>
           </item>

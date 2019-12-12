@@ -13,7 +13,7 @@ class Bill
     TimeStamp date_time;
 public:
     Bill();
-    QString make_bill(Item items[], int size, QString name, float price, float paid, bool delivery, float delivery_fee);
+    QString make_bill(Item items[], int size, QString name, float price, float paid, bool delivery, float delivery_fee, float promocode_discount);
 };
 
 #endif // BILL_H

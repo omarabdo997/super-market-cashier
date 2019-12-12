@@ -10,18 +10,26 @@ StoreMenu::StoreMenu(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->treeWidget->setColumnWidth(0,280);
-    ui->treeWidget->setColumnWidth(1,75);
-    ui->treeWidget->setColumnWidth(2,75);
+    ui->treeWidget->setColumnWidth(1,85);
+    ui->treeWidget->setColumnWidth(2,85);
     ui->treeWidget->setColumnWidth(3,75);
+    QPixmap bkgnd(":/new/prefix4/images.jpg");
+        QSize size;
+        size.setWidth(1920);
+        size.setHeight(1080);
+        bkgnd = bkgnd.scaled(size, Qt::IgnoreAspectRatio);
+        QPalette palette;
+        palette.setBrush(QPalette::Background, bkgnd);
+        this->setPalette(palette);
     QTreeWidgetItem* store_items;
 
     for(int i=0;i<menu.get_size();i++)
     {
         store_items=new QTreeWidgetItem();
         store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
-        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
-        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
         ui->treeWidget->insertTopLevelItem(i,store_items);
     }
 
@@ -46,9 +54,9 @@ void StoreMenu::on_pushButton_clicked()
     {
         store_items=new QTreeWidgetItem();
         store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
-        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
-        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
         ui->treeWidget->insertTopLevelItem(i,store_items);
     }
 
@@ -67,9 +75,9 @@ void StoreMenu::on_pushButton_2_clicked()
     {
         store_items=new QTreeWidgetItem();
         store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
-        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
-        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
         ui->treeWidget->insertTopLevelItem(i,store_items);
     }
 }
@@ -84,9 +92,9 @@ void StoreMenu::on_pushButton_3_clicked()
     {
         store_items=new QTreeWidgetItem();
         store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QVariant(store.get_item(i).get_selling_price()).toString());
-        store_items->setText(2,QVariant(store.get_item(i).get_buying_price()).toString());
-        store_items->setText(3,QVariant(store.get_item(i).get_quantity()).toString());
+        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
         ui->treeWidget->insertTopLevelItem(i,store_items);
     }
 }

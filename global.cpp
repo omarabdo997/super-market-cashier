@@ -15,4 +15,5 @@ QTreeWidgetItem* cart_items[100];
 float paid;
 float delivery_fee=0;
 bool delivery=0;
+float promocode_discount=0;
 //QTreeWidgetItem* store_items[10000];

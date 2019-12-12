@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             item[i]=new QTreeWidgetItem();
             item[i]->setText(0,menu.get_item(i).get_name());
-            item[i]->setText(1,QVariant(menu.get_item(i).get_selling_price()).toString());
+            item[i]->setText(1,QString::number(menu.get_item(i).get_selling_price()));
             ui->treeWidget->insertTopLevelItem(i,item[i]);
 
 
@@ -144,8 +144,8 @@ void MainWindow::on_pushButton_clicked()
         {
             cart_items[i]=new QTreeWidgetItem();
             cart_items[i]->setText(0,cart.get_item(i).get_name());
-            cart_items[i]->setText(1,QVariant(cart.get_item(i).get_quantity()).toString());
-            cart_items[i]->setText(2,QVariant(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()).toString());
+            cart_items[i]->setText(1,QString::number(cart.get_item(i).get_quantity()));
+            cart_items[i]->setText(2,QString::number(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()));
             ui->treeWidget_2->insertTopLevelItem(i,cart_items[i]);
 
 
@@ -191,8 +191,8 @@ void MainWindow::on_pushButton_2_clicked()
             cart_items[i]=new QTreeWidgetItem();
 
             cart_items[i]->setText(0,cart.get_item(i).get_name());
-            cart_items[i]->setText(1,QVariant(cart.get_item(i).get_quantity()).toString());
-            cart_items[i]->setText(2,QVariant(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()).toString());
+            cart_items[i]->setText(1,QString::number(cart.get_item(i).get_quantity()));
+            cart_items[i]->setText(2,QString::number(cart.get_item(i).get_quantity()*cart.get_item(i).get_selling_price()));
             ui->treeWidget_2->insertTopLevelItem(i,cart_items[i]);
 
 
@@ -215,7 +215,8 @@ void MainWindow::on_pushButton_3_clicked()
         confirmation_menu.exec();
 
         controller.make_selling(cart,customer);
-        QMessageBox::information(this,"message",cart.make_selling(user->get_name(),paid,delivery,delivery_fee));
+        QMessageBox::information(this,"message",cart.make_selling(user->get_name(),paid,delivery,delivery_fee,promocode_discount));
+        promocode_discount=0;
         ui->treeWidget_2->clear();
         ui->textEdit_2->clear();
         ui->lineEdit_4->clear();
@@ -358,7 +359,7 @@ void MainWindow::on_pushButton_6_clicked()
 
         item[i]=new QTreeWidgetItem();
         item[i]->setText(0,menu.get_item(i).get_name());
-        item[i]->setText(1,QVariant(menu.get_item(i).get_selling_price()).toString());
+        item[i]->setText(1,QString::number(menu.get_item(i).get_selling_price()));
         ui->treeWidget->insertTopLevelItem(i,item[i]);
 
 

@@ -76,10 +76,10 @@ void Cart::remove_item(Menu& menu,float quantity,int row)
     }
     qDebug()<<menu.get_item(id).get_quantity();
 }
-QString Cart::make_selling(QString name,float paid,bool delivery,float delivery_fee)
+QString Cart::make_selling(QString name,float paid,bool delivery,float delivery_fee,float promocode_discount)
 {
 
-    return bill.make_bill(items,size,name,get_total_price(),paid,delivery,delivery_fee);
+    return bill.make_bill(items,size,name,get_total_price(),paid,delivery,delivery_fee,promocode_discount);
 }
 float Cart::get_total_price()
 {
@@ -96,7 +96,7 @@ float Cart::get_profit()
     for(int i=0;i<size;i++)
     {
         profit+=(items[i].get_quantity()*items[i].get_selling_price())-(items[i].get_quantity()*items[i].get_buying_price());
-        qDebug()<<"selling"<<QVariant(items[i].get_quantity()*items[i].get_selling_price()).toString()<<"buying"<<QVariant(items[i].get_quantity()*items[i].get_buying_price()).toString();
+
     }
     return profit;
 }

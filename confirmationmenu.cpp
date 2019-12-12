@@ -7,9 +7,17 @@ ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
     ui(new Ui::ConfirmationMenu)
 {
     ui->setupUi(this);
-    ui->label_3->setText(QVariant(cart.get_total_price()).toString());
+    ui->label_3->setText(QString::number(cart.get_total_price()));
     ui->label_7->hide();
     ui->label_8->hide();
+    QPixmap bkgnd(":/new/prefix4/images.jpg");
+        QSize size;
+        size.setWidth(1920);
+        size.setHeight(1080);
+        bkgnd = bkgnd.scaled(size, Qt::IgnoreAspectRatio);
+        QPalette palette;
+        palette.setBrush(QPalette::Background, bkgnd);
+        this->setPalette(palette);
     if(customer.get_phone()=="")
     {
         ui->radioButton->setCheckable(false);
@@ -23,6 +31,7 @@ ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
         ui->lineEdit_3->setReadOnly(false);
     }
     ui->radioButton_2->setChecked(true);
+    ui->lineEdit_3->setReadOnly(true);
 
 }
 
@@ -33,7 +42,15 @@ ConfirmationMenu::~ConfirmationMenu()
 
 void ConfirmationMenu::on_pushButton_clicked()
 {
-    paid=ui->lineEdit->text().toFloat();
+    if(ui->lineEdit->text()=="")
+    {
+        paid=0;
+    }
+    else
+    {
+        paid=ui->lineEdit->text().toFloat();
+    }
+
     if(ui->radioButton->isChecked())
     {
         delivery=1;
@@ -54,24 +71,45 @@ void ConfirmationMenu::on_lineEdit_3_editingFinished()
 
 void ConfirmationMenu::on_lineEdit_3_textChanged(const QString &arg1)
 {
-    ui->label_3->setText(QVariant((cart.get_total_price()+ui->lineEdit_3->text().toFloat())).toString());
+    ui->label_3->setText(QString::number((cart.get_total_price()*(1-promocode_discount)+ui->lineEdit_3->text().toFloat())));
 }
 
 void ConfirmationMenu::on_pushButton_3_clicked()
 {
-    float discount=controller.check_promocode(ui->lineEdit_2->text());
-    qDebug()<<discount;
-    int discount_percentage=discount*100;
-    if(discount!=0)
+    promocode_discount=controller.check_promocode(ui->lineEdit_2->text());
+
+
+    int discount_percentage=promocode_discount*100;
+    if(promocode_discount!=0)
     {
         ui->label_8->hide();
         ui->label_7->show();
-        ui->label_7->setText("Promocode applied successfuly "+QVariant(discount_percentage).toString()+"% discount !");
+        ui->label_7->setText("Promocode applied successfuly "+QString::number(discount_percentage)+"% discount !");
+        ui->label_3->setText(QString::number((cart.get_total_price()*(1-promocode_discount)+ui->lineEdit_3->text().toFloat())));
     }
     else
     {
         ui->label_7->hide();
         ui->label_8->show();
+        ui->label_3->setText(QString::number((cart.get_total_price()*(1-promocode_discount)+ui->lineEdit_3->text().toFloat())));
+
+    }
+}
+
+void ConfirmationMenu::on_radioButton_2_clicked(bool checked)
+{
+    if(checked)
+    {
+        ui->lineEdit_3->setReadOnly(true);
+        ui->lineEdit_3->clear();
+    }
+}
+
+void ConfirmationMenu::on_radioButton_clicked(bool checked)
+{
+    if(checked)
+    {
+        ui->lineEdit_3->setReadOnly(false);
 
     }
 }

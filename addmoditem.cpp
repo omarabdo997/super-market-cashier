@@ -12,9 +12,9 @@ AddModItem::AddModItem(QWidget *parent) :
     {
         ui->pushButton->hide();
         ui->lineEdit->setText(store.get_item(row).get_name());
-        ui->lineEdit_2->setText(QVariant(store.get_item(row).get_selling_price()).toString());
-        ui->lineEdit_3->setText(QVariant(store.get_item(row).get_buying_price()).toString());
-        ui->lineEdit_4->setText(QVariant(store.get_item(row).get_quantity()).toString());
+        ui->lineEdit_2->setText(QString::number(store.get_item(row).get_selling_price()));
+        ui->lineEdit_3->setText(QString::number(store.get_item(row).get_buying_price()));
+        ui->lineEdit_4->setText(QString::number(store.get_item(row).get_quantity()));
     }
 
     if(selector==0)

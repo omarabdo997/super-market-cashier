@@ -68,27 +68,68 @@ color: rgb(85, 0, 0);</string>
       <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0">
        <item row="0" column="0" colspan="3">
         <widget class="QTreeWidget" name="treeWidget">
+         <property name="styleSheet">
+          <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
+         </property>
          <property name="indentation">
           <number>0</number>
          </property>
+         <attribute name="headerHighlightSections">
+          <bool>true</bool>
+         </attribute>
          <column>
           <property name="text">
            <string>Name</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="background">
+           <color>
+            <red>0</red>
+            <green>10</green>
+            <blue>103</blue>
+           </color>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Selling Price</string>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Buying Price</string>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Quantity</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
           </property>
          </column>
         </widget>
@@ -130,7 +171,11 @@ color: rgb(85, 0, 0);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit"/>
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="label_2">
@@ -140,7 +185,11 @@ color: rgb(85, 0, 0);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2"/>
+            <widget class="QLineEdit" name="lineEdit_2">
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QPushButton" name="pushButton_5">
@@ -153,24 +202,55 @@ color: rgb(85, 0, 0);</string>
          </item>
          <item>
           <widget class="QTreeWidget" name="treeWidget_2">
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/new/prefix2/grey-background-v1.jpg);</string>
+           </property>
            <column>
             <property name="text">
              <string>Phone</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
             </property>
            </column>
            <column>
             <property name="text">
              <string>Date and Time</string>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
            </column>
            <column>
             <property name="text">
              <string>Price</string>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
            </column>
            <column>
             <property name="text">
              <string>Profit</string>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
             </property>
            </column>
           </widget>

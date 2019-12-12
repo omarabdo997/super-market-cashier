@@ -135,11 +135,11 @@ void Controller::make_selling(Cart cart,Customer customer)
 {
     if(customer.get_phone()=="")
     {
-        sql="insert into sellings(sellings,price,profit) values('"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee)+"',"+QVariant(cart.get_total_price()+delivery_fee).toString()+","+QVariant(cart.get_profit()).toString()+")";
+        sql="insert into sellings(sellings,price,profit) values('"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee,promocode_discount)+"',"+QString::number((cart.get_total_price()*(1-promocode_discount))+delivery_fee)+","+QString::number(cart.get_profit()-(cart.get_total_price()*promocode_discount))+")";
     }
     else
     {
-        sql="insert into sellings(phone,sellings,price,profit) values('"+customer.get_phone()+"','"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee)+"',"+QVariant(cart.get_total_price()+delivery_fee).toString()+","+QVariant(cart.get_profit()).toString()+")";
+        sql="insert into sellings(phone,sellings,price,profit) values('"+customer.get_phone()+"','"+cart.make_selling(user->get_name(),paid,delivery,delivery_fee,promocode_discount)+"',"+QString::number((cart.get_total_price()*(1-promocode_discount))+delivery_fee)+","+QString::number(cart.get_profit()-(cart.get_total_price()*promocode_discount))+")";
     }
 
     arry=sql.toLocal8Bit();
@@ -147,7 +147,7 @@ void Controller::make_selling(Cart cart,Customer customer)
     result=mysql_query(conn,q);
     for (int i=0;i<cart.get_size();i++)
     {
-        sql="update items set quantity=quantity-"+QVariant(cart.get_item(i).get_quantity()).toString()+" where name='"+cart.get_item(i).get_name()+"'";
+        sql="update items set quantity=quantity-"+QString::number(cart.get_item(i).get_quantity())+" where name='"+cart.get_item(i).get_name()+"'";
         arry=sql.toLocal8Bit();
         q=arry.data();
         result=mysql_query(conn,q);
@@ -226,7 +226,7 @@ int Controller::retrieve_sellings_history(Store& store,QString from_date,QString
 Customer Controller::add_customer(QString name,QString phone,QString address,int is_special)
 {
     Customer customer(name,phone,address,is_special);
-    sql="insert into customers(name,phone,address,is_special) values('"+customer.get_name()+"','"+customer.get_phone()+"','"+customer.get_address()+"',"+QVariant(is_special).toString()+")";
+    sql="insert into customers(name,phone,address,is_special) values('"+customer.get_name()+"','"+customer.get_phone()+"','"+customer.get_address()+"',"+QString::number(is_special)+")";
     arry=sql.toLocal8Bit();
 
     q=arry.data();
