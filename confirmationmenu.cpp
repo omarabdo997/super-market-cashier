@@ -8,6 +8,8 @@ ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->label_3->setText(QVariant(cart.get_total_price()).toString());
+    ui->label_7->hide();
+    ui->label_8->hide();
     if(customer.get_phone()=="")
     {
         ui->radioButton->setCheckable(false);
@@ -53,4 +55,23 @@ void ConfirmationMenu::on_lineEdit_3_editingFinished()
 void ConfirmationMenu::on_lineEdit_3_textChanged(const QString &arg1)
 {
     ui->label_3->setText(QVariant((cart.get_total_price()+ui->lineEdit_3->text().toFloat())).toString());
+}
+
+void ConfirmationMenu::on_pushButton_3_clicked()
+{
+    float discount=controller.check_promocode(ui->lineEdit_2->text());
+    qDebug()<<discount;
+    int discount_percentage=discount*100;
+    if(discount!=0)
+    {
+        ui->label_8->hide();
+        ui->label_7->show();
+        ui->label_7->setText("Promocode applied successfuly "+QVariant(discount_percentage).toString()+"% discount !");
+    }
+    else
+    {
+        ui->label_7->hide();
+        ui->label_8->show();
+
+    }
 }

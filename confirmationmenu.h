@@ -22,6 +22,8 @@ private slots:
 
     void on_lineEdit_3_textChanged(const QString &arg1);
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::ConfirmationMenu *ui;
 };

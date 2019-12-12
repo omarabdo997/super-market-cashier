@@ -32,6 +32,7 @@ public:
     int retrieve_sellings_history(Store& store,QString from_date,QString to_date,QStringList lst[]);
     QString retrieve_profit();
     QString retrieve_capital();
+    float check_promocode(QString code);
 };
 
 #endif // CONTROLLER_H

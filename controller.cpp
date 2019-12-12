@@ -260,3 +260,22 @@ QString Controller::retrieve_capital()
     capital=row[2];
     return capital;
 }
+float Controller::check_promocode(QString code)
+{
+    sql="select discount from promocodes where code='"+code+"'";
+    arry=sql.toLocal8Bit();
+
+    q=arry.data();
+    result=mysql_query(conn,q);
+    res=mysql_store_result(conn);
+    row=mysql_fetch_row(res);
+    if(row!=NULL)
+    {
+        QString discount=row[0];
+        return discount.toFloat();
+    }
+    else
+    {
+        return 0;
+    }
+}
