@@ -24,4 +24,16 @@
     <qresource prefix="/new/prefix4">
         <file>images.jpg</file>
     </qresource>
+    <qresource prefix="/loginwallpaper">
+        <file>Info Wallpapers abstract wallpaper hd.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix5">
+        <file>oYsE2X.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix6">
+        <file>shiny-metal-red-error-image-de.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix7">
+        <file>58uwde.jpg</file>
+    </qresource>
 </RCC>
