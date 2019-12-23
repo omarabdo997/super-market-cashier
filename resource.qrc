@@ -1,14 +1,9 @@
 <RCC>
     <qresource prefix="/images">
-        <file>302cde539d24750e0a4fd85d17d8cf01--wallpaper-pictures-pretty-pictures.jpg</file>
-        <file>../../Desktop/332643_naruto-desktop-wallpaper.jpg</file>
         <file>uOFNos.jpg</file>
-        <file>332643_naruto-desktop-wallpaper.jpg</file>
         <file>grey-background-v1.jpg</file>
     </qresource>
-    <qresource prefix="/new/prefix1">
-        <file>302cde539d24750e0a4fd85d17d8cf01--wallpaper-pictures-pretty-pictures.jpg</file>
-    </qresource>
+    <qresource prefix="/new/prefix1"/>
     <qresource prefix="/background">
         <file>uOFNos.jpg</file>
     </qresource>
@@ -18,10 +13,20 @@
     <qresource prefix="/new/prefix2">
         <file>grey-background-v1.jpg</file>
     </qresource>
-    <qresource prefix="/new/prefix3">
-        <file>332643_naruto-desktop-wallpaper.jpg</file>
-    </qresource>
+    <qresource prefix="/new/prefix3"/>
     <qresource prefix="/new/prefix4">
         <file>images.jpg</file>
+    </qresource>
+    <qresource prefix="/loginwallpaper">
+        <file>Info Wallpapers abstract wallpaper hd.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix5">
+        <file>oYsE2X.jpg</file>
+    </qresource>
+    <qresource prefix="/new/prefix6">
+        <file>shiny-metal-red-error-image-de.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix7">
+        <file>58uwde.jpg</file>
     </qresource>
 </RCC>
