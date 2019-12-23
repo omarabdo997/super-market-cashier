@@ -260,7 +260,7 @@ color: rgb(85, 0, 0);</string>
        <item>
         <widget class="QPushButton" name="pushButton_4">
          <property name="text">
-          <string>View recipt</string>
+          <string>View receipt</string>
          </property>
         </widget>
        </item>

@@ -33,7 +33,7 @@
      <item>
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Promo Code:</string>
+        <string>Promocode:</string>
        </property>
       </widget>
      </item>
