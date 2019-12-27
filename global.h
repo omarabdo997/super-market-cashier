@@ -3,7 +3,6 @@
 #include "controller.h"
 #include "item.h"
 #include "menu.h"
-#include "qdebug.h"
 #include "cart.h"
 #include "timestamp.h"
 #include <iostream>

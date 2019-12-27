@@ -22,6 +22,7 @@ StoreMenu::StoreMenu(QWidget *parent) :
         QPalette palette;
         palette.setBrush(QPalette::Background, bkgnd);
         this->setPalette(palette);
+    ui->lineEdit->setFocus();
     QTreeWidgetItem* store_items;
 
     for(int i=0;i<menu.get_size();i++)
@@ -68,40 +69,49 @@ void StoreMenu::on_pushButton_2_clicked()
 {
     selector=1;
     row=ui->treeWidget->currentIndex().row();
-    AddModItem addmod;
-    addmod.exec();
-    QTreeWidgetItem* store_items;
-    ui->treeWidget->clear();
-    for(int i=0;i<menu.get_size();i++)
+    if(row!=-1)
     {
-        store_items=new QTreeWidgetItem();
-        store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
-        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
-        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
-        ui->treeWidget->insertTopLevelItem(i,store_items);
+        AddModItem addmod;
+        addmod.exec();
+        QTreeWidgetItem* store_items;
+        ui->treeWidget->clear();
+        for(int i=0;i<menu.get_size();i++)
+        {
+            store_items=new QTreeWidgetItem();
+            store_items->setText(0,store.get_item(i).get_name());
+            store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+            store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+            store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
+            ui->treeWidget->insertTopLevelItem(i,store_items);
+        }
     }
+
 }
 
 void StoreMenu::on_pushButton_3_clicked()
 {
     row=ui->treeWidget->currentIndex().row();
-    controller.delete_in_store(store,row);
-    QTreeWidgetItem* store_items;
-    ui->treeWidget->clear();
-    for(int i=0;i<menu.get_size();i++)
+    if(row!=-1)
     {
-        store_items=new QTreeWidgetItem();
-        store_items->setText(0,store.get_item(i).get_name());
-        store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
-        store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
-        store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
-        ui->treeWidget->insertTopLevelItem(i,store_items);
+        controller.delete_in_store(store,row);
+        QTreeWidgetItem* store_items;
+        ui->treeWidget->clear();
+        for(int i=0;i<menu.get_size();i++)
+        {
+            store_items=new QTreeWidgetItem();
+            store_items->setText(0,store.get_item(i).get_name());
+            store_items->setText(1,QString::number(store.get_item(i).get_selling_price()));
+            store_items->setText(2,QString::number(store.get_item(i).get_buying_price()));
+            store_items->setText(3,QString::number(store.get_item(i).get_quantity()));
+            ui->treeWidget->insertTopLevelItem(i,store_items);
+        }
     }
+
 }
 
 void StoreMenu::on_pushButton_4_clicked()
 {
+    if(ui->treeWidget_2->currentIndex().row()!=-1)
     QMessageBox::information(this,"Recipt",store.display_sellings(ui->treeWidget_2->currentIndex().row()));
 }
 
@@ -112,7 +122,7 @@ void StoreMenu::on_pushButton_5_clicked()
     QStringList lst[5000];
     int size=controller.retrieve_sellings_history(store,ui->lineEdit->text(),ui->lineEdit_2->text(),lst);
     QTreeWidgetItem* history;
-    qDebug()<<"here";
+
     ui->treeWidget_2->clear();
     for(int i=0;i<size;i++)
     {
@@ -136,9 +146,17 @@ void StoreMenu::on_treeWidget_2_itemDoubleClicked(QTreeWidgetItem *item, int col
 
 void StoreMenu::on_pushButton_6_clicked()
 {
-    QString promocode=QUuid::createUuid().toString();
-    promocode.remove(QRegularExpression("{|}|-"));
-    promocode.resize(12);
-    controller.add_promocode(promocode,ui->lineEdit_3->text().toFloat()/100);
-    QMessageBox::information(this,"code","Promocode is "+promocode+" with discount of "+ui->lineEdit_3->text()+"%");
+    if(ui->lineEdit_3->text()!="" and ui->lineEdit_3->text().toFloat()>0 and ui->lineEdit_3->text().toFloat()<=100)
+    {
+        QString promocode=QUuid::createUuid().toString();
+        promocode.remove(QRegularExpression("{|}|-"));
+        promocode.resize(12);
+        controller.add_promocode(promocode,ui->lineEdit_3->text().toFloat()/100);
+        QMessageBox::information(this,"code","Promocode is "+promocode+" with discount of "+ui->lineEdit_3->text()+"%");
+    }
+    else
+    {
+        QMessageBox::critical(this,"wrong input","Enter discount value between 0 and 100%");
+    }
+
 }

@@ -7,7 +7,6 @@
 #include "controller.h"
 #include "item.h"
 #include "menu.h"
-#include "qdebug.h"
 #include "cart.h"
 #include "timestamp.h"
 #include <iostream>
@@ -134,13 +133,13 @@ void MainWindow::on_pushButton_clicked()
     int quantity=ui->lineEdit_2->text().toInt();
     int row=ui->treeWidget->currentIndex().row();
     TimeStamp now;
-    qDebug()<<now.get_formate();
+
 
     if(row!=-1)
     {
         cart.add_item(menu,quantity,row);
         ui->lineEdit_2->clear();
-        qDebug()<<"New"<<menu.get_item(row).get_quantity();
+
         ui->treeWidget_2->clear();
         for(int i=0;i<cart.get_size();i++)
         {
@@ -180,14 +179,14 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 void MainWindow::on_pushButton_2_clicked()
 {
     int row=ui->treeWidget_2->currentIndex().row();
-    qDebug()<<"row"<<row;
+
     int quantity=ui->lineEdit_2->text().toInt();
     if(row!=-1)
     {
         cart.remove_item(menu,quantity,row);
         ui->lineEdit_2->clear();
         ui->treeWidget_2->clear();
-        qDebug()<<"iam here";
+
         for(int i=0;i<cart.get_size();i++)
         {
             cart_items[i]=new QTreeWidgetItem();
@@ -298,7 +297,7 @@ void MainWindow::on_pushButton_4_clicked()
         }
         else
         {
-            qDebug()<<"Ma7asalsh";
+
         }
     }
 }
@@ -344,6 +343,10 @@ void MainWindow::on_pushButton_5_clicked()
             ui->radioButton_2->setChecked(false);
             ui->radioButton->setAutoExclusive(true);
             ui->radioButton_2->setAutoExclusive(true);
+            if(is_special==1)
+            {
+                ui->label_9->show();
+            }
 
 
 

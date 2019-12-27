@@ -1,5 +1,4 @@
 #include "controller.h"
-#include "qdebug.h"
 #include "string"
 #include "item.h"
 #include "global.h"
@@ -10,7 +9,7 @@ using namespace std;
 QString Controller::connection()
 {
     conn = mysql_init(0);
-    conn = mysql_real_connect(conn, "localhost", "root", "917356oo", "supermarket", 3306, NULL, 0);
+    conn = mysql_real_connect(conn, "localhost", "supermarket917356", "917356", "supermarket917356", 3306, NULL, 0);
     if(conn)
     {
         return "Connected";
@@ -35,20 +34,20 @@ User* Controller::login(QString id,QString pass)
     {
 
         User* user=new Employee();
-        qDebug()<<"here1";
+
 
 
         return user;
     }
     else
     {
-        qDebug()<<"here2";
+
       is_admin=row[5];
     }
 
     if(is_admin=="0")
     {
-        qDebug()<<"here2";
+
 
 
         User* user=new Employee(row[1],row[2],row[3],1,0);
@@ -58,7 +57,7 @@ User* Controller::login(QString id,QString pass)
     }
     else if(is_admin=="1")
     {
-        qDebug()<<"here3";
+
 
         User* user=new Owner(row[1],row[2],row[3],1,1);
 
@@ -84,7 +83,7 @@ Menu Controller::retrieve_menu()
 
     while(row=mysql_fetch_row(res))
     {
-        qDebug()<<row[0];
+
         selling_price=row[2];
         buying_price=row[3];
         quantity=row[4];

@@ -1,5 +1,5 @@
 #include "store.h"
-#include "qdebug.h"
+
 
 Store::Store()
 {

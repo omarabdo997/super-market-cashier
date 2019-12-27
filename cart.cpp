@@ -1,5 +1,4 @@
 #include "cart.h"
-#include "qdebug.h"
 
 Cart::Cart():size(0)
 {
@@ -35,7 +34,7 @@ void Cart::add_item(Menu& menu,int quantity,int n)
         menu.set_item_quantity(n,item.get_quantity()-quantity);
 
     }
-    qDebug()<<menu.get_item(n).get_quantity();
+
 
 }
 void Cart::set_size(int s)
@@ -55,13 +54,13 @@ QStringList Cart::display()
 }
 void Cart::remove_item(Menu& menu,float quantity,int row)
 {
-    qDebug()<<items[row].get_name();
+
     int id=cart_menu[items[row].get_name()];
-    qDebug()<<"id "<<id;
+
     Item item=menu.get_item(id);
     if(quantity==0 or quantity==items[row].get_quantity())
     {
-        qDebug()<<"itemQ"<<item.get_quantity()<<"itemr"<<items[row].get_quantity();
+
         menu.set_item_quantity(id,item.get_quantity()+items[row].get_quantity());
         size--;
         for(int i=row;i<size;i++)
@@ -74,7 +73,7 @@ void Cart::remove_item(Menu& menu,float quantity,int row)
         menu.set_item_quantity(id,item.get_quantity()+quantity);
         items[row].set_quantity(items[row].get_quantity()-quantity);
     }
-    qDebug()<<menu.get_item(id).get_quantity();
+
 }
 QString Cart::make_selling(QString name,float paid,bool delivery,float delivery_fee,float promocode_discount)
 {

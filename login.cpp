@@ -1,7 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
 #include "mainwindow.h"
-#include "qdebug.h"
 #include "global.h"
 
 

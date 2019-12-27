@@ -1,6 +1,7 @@
 #include "confirmationmenu.h"
 #include "ui_confirmationmenu.h"
 #include "global.h"
+#include <QMessageBox>
 QString promocode;
 ConfirmationMenu::ConfirmationMenu(QWidget *parent) :
     QDialog(parent),
@@ -62,9 +63,19 @@ void ConfirmationMenu::on_pushButton_clicked()
         delivery=0;
         delivery_fee=0;
     }
-    controller.remove_promocode(promocode);
-    confirme=1;
-    close();
+    if(paid>=cart.get_total_price()*(1-promocode_discount)+delivery_fee or delivery==1)
+    {
+        controller.remove_promocode(promocode);
+        confirme=1;
+        close();
+    }
+    else
+    {
+        QMessageBox::information(this,"Low paid price","The paid price is less than the total price");
+    }
+
+
+
 }
 
 void ConfirmationMenu::on_lineEdit_3_editingFinished()
